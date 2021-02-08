@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "paths": {
+      "@md-modules/*": ["./modules/*"],
+      "@md-styles/*": ["./modules/shared/styles/*"],
+      "@md-star-wars/*": ["./modules/star-wars/*"],
+      "@md-sw-people/*": ["./modules/star-wars/people/*"],
+      "@md-sw-person/*": ["./modules/star-wars/person/*"],
+      "@md-ui/*": ["./modules/shared/components/ui/*"],
+      "@md-utils/*": ["./modules/shared/utils/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+}
