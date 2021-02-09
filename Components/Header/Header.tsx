@@ -2,13 +2,21 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+const StyledHeader = styled.div`
+  background: #5856d6;
+  color: white;
+  display: flex;
+  padding: 10px;
+`;
+
 const Header = () => {
   return (
-    <div>
+    <StyledHeader>
       <Link href='/'>
-        <h1 style={{ cursor: 'pointer' }}>Header</h1>
+        <h2 style={{ cursor: 'pointer' }}>Header</h2>
       </Link>
-    </div>
+      <p>Cart: </p>
+    </StyledHeader>
   );
 };
 

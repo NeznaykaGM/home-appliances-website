@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styles from '@md-modules/shared/styles/Home.module.css';
-import { MainLayout } from '@md-modules/shared/layouts/main';
+// import { MainLayout } from '@md-modules/shared/layouts/main';
 import styled from 'styled-components';
-import ProductsContainer from '../Components/Products/ProductsContainer';
+import ProductsPage from '../Components/Products/ProductsContainer';
 
 const Home = () => {
   // env example
@@ -10,7 +10,7 @@ const Home = () => {
   // console.log(process.env.NEXT_PUBLIC_ANALYTICS_ID) for client side
   return (
     <div>
-      <ProductsContainer />
+      <ProductsPage />
     </div>
   );
 };

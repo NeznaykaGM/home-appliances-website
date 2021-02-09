@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { Linking } from 'react-native';
+import Button from '../Button';
+import { string } from 'prop-types';
 
 const StyledProducts = styled.div`
   width: 300px;
@@ -9,13 +10,9 @@ const StyledProducts = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
   padding: 10px;
   margin: 10px;
+  background: white;
 
-  a {
-    text-decoration: none;
-    color: black !important;
-    padding: 5px;
-  }
-  img{
+  img {
     width: 100%;
     height: 200px;
     overflow: hidden;
@@ -23,21 +20,40 @@ const StyledProducts = styled.div`
     user-select: none;
     pointer-events: none;
     cursor: pointer;
-    //box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
+    padding: 2px;
+    background: #fafafa;
   }
 `;
 
-const Products = ({img}) => {
+const StyledDescriptions = styled.div`
+  width: 100%;
+  display: flex;
+  div {
+    padding: 0 50px 0 0;
+  }
+`;
+
+interface props {
+  img: string;
+  name?: string;
+  price?: string | number;
+  id?: string | number;
+}
+
+const Products = ({ img, name, price, id }: props) => {
   return (
     <StyledProducts>
-      <Link href="/details"><img src={img} alt='' /></Link>
-      <Link href='/lll'>
-        <a>Add to cart</a>
+      <Link href={`/details`}>
+        <img src={img} alt='img' />
       </Link>
-      <Link href='/details'>
-        <a>Details</a>
-      </Link>
+      <StyledDescriptions>
+        <div>Name: {name}</div>
+        <div>Price: {price}</div>
+      </StyledDescriptions>
+      <div style={{ display: 'flex', position: 'absolute', bottom: '30px' }}>
+        <Button url='/' title='Add to cart' />
+        <Button url={`/details/${id}`} title='Details' />
+      </div>
     </StyledProducts>
   );
 };
