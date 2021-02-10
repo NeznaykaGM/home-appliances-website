@@ -7,6 +7,7 @@ import Button from '../Button';
 const WrapperDetails = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   margin: 10px;
+  position: relative;
 `;
 
 const Descriptions = styled.div`
@@ -28,12 +29,16 @@ const StyledImage = styled.img`
   justify-content: center;
   user-select: none;
   pointer-events: none;
-  cursor: pointer;
+  cursor: crosshair;
   background: #fafafa;
 `
 
 const ButtonWrapper = styled.div`
-float: right;
+  //float: right;
+  padding: 10px;
+  right: 0;
+  bottom: 0;
+  position: absolute;
 `
 
 const ImageDescriptionsWrapper = styled.div`
@@ -41,6 +46,7 @@ const ImageDescriptionsWrapper = styled.div`
   padding: 10px;
   p{
     padding: 10px 0 0 0;
+    font-size: 16px;
   }
 `
 
@@ -61,7 +67,6 @@ const Details: FC<PropsI> = ({ img, name, price, id , descriptions}) => {
   return (
     <>
     <WrapperDetails>
-
       <ImageDescriptionsWrapper>
         <ImageWrapper>
           <StyledImage src={img}/>
@@ -73,12 +78,13 @@ const Details: FC<PropsI> = ({ img, name, price, id , descriptions}) => {
           <hr/>
           <p>Descriptions: {descriptions}</p>
         </Descriptions>
+
+
+        <ButtonWrapper>
+          <Button url='/' title='Add to cart' />
+        </ButtonWrapper>
+
       </ImageDescriptionsWrapper>
-
-      <ButtonWrapper>
-        <Button url='/' title='Add to cart' />
-      </ButtonWrapper>
-
     </WrapperDetails>
     </>
   );

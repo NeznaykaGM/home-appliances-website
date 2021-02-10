@@ -32,6 +32,14 @@ const StyledDescriptions = styled.div`
   }
 `;
 
+const ButtonWrapper = styled.div`
+  float: right;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  margin: 0 0 4px;
+`
+
 interface PropsI {
   img: string;
   name?: string;
@@ -49,10 +57,10 @@ const Product: FC<PropsI> = ({ img, name, price, id }) => {
         <div>Name: {name}</div>
         <div>Price: {price}</div>
       </StyledDescriptions>
-      <div style={{ display: 'flex', position: 'absolute', bottom: '0', margin: '0 0 4px' }}>
+      <ButtonWrapper>
         <Button url='/' title='Add to cart' />
         <Button url={`/details/[id]`} asParam={`/details/${id}`} title='Details' />
-      </div>
+      </ButtonWrapper>
     </StyledProducts>
   );
 };
