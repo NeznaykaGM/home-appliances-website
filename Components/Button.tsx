@@ -4,19 +4,23 @@ import styled from 'styled-components';
 
 
 const StyledButton = styled.div`
-  a {
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #34c759;
+  transition: all ease 0.2s;
+  a{
     text-decoration: none;
     color: black !important;
-    padding: 8px;
-    border-radius: 20px;
-    border: 1px solid #34c759;
-    transition: all ease 0.2s;
   }
-  a:hover {
+  &:hover {
     background: #34c759;
     //transition: all ease 0.2s;
-    color: white !important;
+    a{
+      color: white !important;
+    }
   }
+    
 `;
 
 interface props {
@@ -27,11 +31,11 @@ interface props {
 
 const Button: FC<props> = ({ url, title, callback}) => {
   return (
-    <StyledButton>
-      <Link href={url}>
-        {title}
-      </Link>
-    </StyledButton>
+    <Link href={url}>
+      <StyledButton id={'divButton'}>
+          {title}
+      </StyledButton>
+    </Link>
   );
 };
 

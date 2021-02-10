@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { useRouter } from 'next/router';
-import Products from '../../Components/Products/Products';
+import Product from '../../Components/Products/Product';
 import { GetStaticProps, GetStaticPaths  } from 'next'
 import Head from 'next/head';
 
@@ -56,7 +56,7 @@ const Details = () => {
 
     <div>
       {id}
-      {/*<Products img={products.img} price={products.price} name={products.name}/>*/}
+      {/*<Product img={products.img} price={products.price} name={products.name}/>*/}
     </div>
     </>
   );

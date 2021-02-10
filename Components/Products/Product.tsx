@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Button from '../Button';
-import { useRouter } from 'next/router';
+
 
 
 const StyledProducts = styled.div`
@@ -12,7 +12,7 @@ const StyledProducts = styled.div`
   padding: 10px;
   margin: 10px;
   background: white;
-
+  position: relative;
   img {
     width: 100%;
     height: 200px;
@@ -43,10 +43,7 @@ interface PropsI {
 
 
 
-const Products: FC<PropsI> = ({ img, name, price, id }) => {
-
-  // const route = useRouter();
-
+const Product: FC<PropsI> = ({ img, name, price, id }) => {
   return (
     <StyledProducts>
       <Link href={`/details`}>
@@ -56,7 +53,7 @@ const Products: FC<PropsI> = ({ img, name, price, id }) => {
         <div>Name: {name}</div>
         <div>Price: {price}</div>
       </StyledDescriptions>
-      <div style={{ display: 'flex', position: 'absolute', bottom: '30px' }}>
+      <div style={{ display: 'flex', position: 'absolute', bottom: '0' , margin: '0 0 4px'}}>
         <Button url='/' title='Add to cart' />
         <Button url={`/details/${id}`} title='Details' />
       </div>
@@ -64,4 +61,4 @@ const Products: FC<PropsI> = ({ img, name, price, id }) => {
   );
 };
 
-export default Products;
+export default Product;

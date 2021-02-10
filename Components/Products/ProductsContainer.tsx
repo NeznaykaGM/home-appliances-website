@@ -1,12 +1,14 @@
 import React from 'react';
-import Products from './Products';
+import Product from './Product';
 import styled from 'styled-components';
+import Button from '../Button';
 
 const StyledContainerProducts = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   display: flex;
-  position: relative;
+  //position: relative;
+    
 `;
 
 const PRODUCTS_DATA = [
@@ -31,19 +33,14 @@ const PRODUCTS_DATA = [
     img:
       'https://hotline.ua/img/tx/238/238778856_s265.jpg'
   },
-  {
-    id: 3,
-    name: 'Fridge',
-    price: 1200,
-    img:
-      'https://hotline.ua/img/tx/238/238782043_s265.jpg'
-  }
+  { id: 3, name: 'Fridge', price: 1200, img: 'https://hotline.ua/img/tx/238/238782043_s265.jpg' },
+
 ];
 
 
 const ProductsContainer = () => {
 
-  const products = PRODUCTS_DATA.map((element) => <Products img={element.img} name={element.name} price={element.price} id={element.id} />);
+  const products = PRODUCTS_DATA.map((element) => <Product img={element.img} name={element.name} price={element.price} id={element.id} />);
 
   return (
     <StyledContainerProducts>
