@@ -76,7 +76,8 @@ const Details: FC<PropsI> = ({ img, name, price, id , descriptions}) => {
           <div>Name: {name}</div>
           <div>Price: {price}</div>
           <hr/>
-          <p>Descriptions: {descriptions}</p>
+          <h4>Descriptions:</h4>
+          <p>{descriptions}</p>
         </Descriptions>
 
 
