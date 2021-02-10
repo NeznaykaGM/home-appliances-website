@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import Button from '../Button';
 
-
-
 const StyledProducts = styled.div`
   width: 300px;
   height: 300px;
@@ -41,8 +39,6 @@ interface PropsI {
   id?: string | number;
 }
 
-
-
 const Product: FC<PropsI> = ({ img, name, price, id }) => {
   return (
     <StyledProducts>
@@ -53,7 +49,7 @@ const Product: FC<PropsI> = ({ img, name, price, id }) => {
         <div>Name: {name}</div>
         <div>Price: {price}</div>
       </StyledDescriptions>
-      <div style={{ display: 'flex', position: 'absolute', bottom: '0' , margin: '0 0 4px'}}>
+      <div style={{ display: 'flex', position: 'absolute', bottom: '0', margin: '0 0 4px' }}>
         <Button url='/' title='Add to cart' />
         <Button url={`/details/[id]`} asParam={`/details/${id}`} title='Details' />
       </div>

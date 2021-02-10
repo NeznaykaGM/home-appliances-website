@@ -8,7 +8,6 @@ const StyledContainerProducts = styled.div`
   flex-wrap: wrap;
   display: flex;
   //position: relative;
-    
 `;
 
 const PRODUCTS_DATA = [
@@ -30,23 +29,17 @@ const PRODUCTS_DATA = [
     id: 3,
     name: 'Fridge',
     price: 1200,
-    img:
-      'https://hotline.ua/img/tx/238/238778856_s265.jpg'
+    img: 'https://hotline.ua/img/tx/238/238778856_s265.jpg'
   },
-  { id: 3, name: 'Fridge', price: 1200, img: 'https://hotline.ua/img/tx/238/238782043_s265.jpg' },
-
+  { id: 3, name: 'Fridge', price: 1200, img: 'https://hotline.ua/img/tx/238/238782043_s265.jpg' }
 ];
 
-
 const ProductsContainer = () => {
+  const products = PRODUCTS_DATA.map((element) => (
+    <Product key={element.id} img={element.img} name={element.name} price={element.price} id={element.id} />
+  ));
 
-  const products = PRODUCTS_DATA.map((element) => <Product img={element.img} name={element.name} price={element.price} id={element.id} />);
-
-  return (
-    <StyledContainerProducts>
-      {products}
-    </StyledContainerProducts>
-  )
+  return <StyledContainerProducts>{products}</StyledContainerProducts>;
 };
 
 export default ProductsContainer;
