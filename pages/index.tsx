@@ -12,7 +12,6 @@ const Home = () => {
   return (
     <div>
       <ProductsPage />
-      <Button title={'Title'} url={'URl'}/>
     </div>
   );
 };
