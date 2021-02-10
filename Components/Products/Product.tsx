@@ -6,7 +6,7 @@ import Button from '../Button';
 const StyledProducts = styled.div`
   width: 300px;
   height: 300px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   padding: 10px;
   margin: 10px;
   background: white;

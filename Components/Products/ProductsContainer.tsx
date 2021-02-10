@@ -16,7 +16,8 @@ const PRODUCTS_DATA = [
     name: 'Washer',
     price: 100,
     img:
-      'https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/d/_/d_z01.jpg'
+      'https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/d/_/d_z01.jpg',
+    descriptions: '',
   },
   {
     id: 2,
@@ -31,7 +32,7 @@ const PRODUCTS_DATA = [
     price: 1200,
     img: 'https://hotline.ua/img/tx/238/238778856_s265.jpg'
   },
-  { id: 3, name: 'Fridge', price: 1200, img: 'https://hotline.ua/img/tx/238/238782043_s265.jpg' }
+  { id: 4, name: 'Fridge', price: 1200, img: 'https://hotline.ua/img/tx/238/238782043_s265.jpg' }
 ];
 
 const ProductsContainer = () => {

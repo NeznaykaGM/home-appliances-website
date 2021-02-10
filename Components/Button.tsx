@@ -3,6 +3,8 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const StyledButton = styled.div`
+  max-height: 100px;
+  max-width: 100px;
   padding: 8px;
   cursor: pointer;
   border-radius: 20px;
@@ -15,9 +17,7 @@ const StyledButton = styled.div`
   &:hover {
     background: #34c759;
     //transition: all ease 0.2s;
-    a {
-      color: white !important;
-    }
+    color: white !important;
   }
 `;
 
