@@ -38,7 +38,7 @@ const ButtonWrapper = styled.div`
   position: absolute;
   bottom: 0;
   margin: 0 0 4px;
-`
+`;
 
 interface PropsI {
   img: string;
