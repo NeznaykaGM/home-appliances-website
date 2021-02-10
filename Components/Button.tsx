@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+
 
 const StyledButton = styled.div`
   a {
@@ -24,11 +25,11 @@ interface props {
   callback?: any;
 }
 
-const Button = ({ url, title, callback}: props) => {
+const Button: FC<props> = ({ url, title, callback}) => {
   return (
     <StyledButton>
-      <Link href={url} >
-        <a onClick={() => callback()}>{title}</a>
+      <Link href={url}>
+        {title}
       </Link>
     </StyledButton>
   );

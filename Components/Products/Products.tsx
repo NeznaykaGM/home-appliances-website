@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import Button from '../Button';
-import { string } from 'prop-types';
+import { useRouter } from 'next/router';
+
 
 const StyledProducts = styled.div`
   width: 300px;
@@ -33,14 +34,19 @@ const StyledDescriptions = styled.div`
   }
 `;
 
-interface props {
+interface PropsI {
   img: string;
   name?: string;
   price?: string | number;
   id?: string | number;
 }
 
-const Products = ({ img, name, price, id }: props) => {
+
+
+const Products: FC<PropsI> = ({ img, name, price, id }) => {
+
+  // const route = useRouter();
+
   return (
     <StyledProducts>
       <Link href={`/details`}>

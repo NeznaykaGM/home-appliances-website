@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styles from '@md-modules/shared/styles/Home.module.css';
-// import { MainLayout } from '@md-modules/shared/layouts/main';
 import styled from 'styled-components';
 import ProductsPage from '../Components/Products/ProductsContainer';
+
 
 const Home = () => {
   // env example

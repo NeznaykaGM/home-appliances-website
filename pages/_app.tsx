@@ -12,13 +12,13 @@ import Layout from '../Components/Layout';
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
     <Head>
-      <title>home-appliances-website</title>
+      <title>Website | Home</title>
       <link rel='icon' href='/favicon.ico' />
       <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
       <meta charSet='utf-8' />
     </Head>
     <Layout>
-      <Component {...pageProps} />
+      <Component {...pageProps}/>
     </Layout>
     <GlobalStyles />
   </>
