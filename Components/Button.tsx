@@ -27,11 +27,12 @@ interface props {
   title: string;
   url: string;
   callback?: any;
+  asParam?: any;
 }
 
-const Button: FC<props> = ({ url, title, callback}) => {
+const Button: FC<props> = ({ url, title, callback, asParam}) => {
   return (
-    <Link href={url}>
+    <Link href={url} as ={asParam}>
       <StyledButton id={'divButton'}>
           {title}
       </StyledButton>

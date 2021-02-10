@@ -2,8 +2,6 @@ import * as React from 'react';
 import styles from '@md-modules/shared/styles/Home.module.css';
 import styled from 'styled-components';
 import ProductsPage from '../Components/Products/ProductsContainer';
-import Button from '../Components/Button';
-
 
 const Home = () => {
   // env example

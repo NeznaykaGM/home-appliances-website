@@ -55,7 +55,7 @@ const Product: FC<PropsI> = ({ img, name, price, id }) => {
       </StyledDescriptions>
       <div style={{ display: 'flex', position: 'absolute', bottom: '0' , margin: '0 0 4px'}}>
         <Button url='/' title='Add to cart' />
-        <Button url={`/details/${id}`} title='Details' />
+        <Button url={`/details/[id]`} asParam={`/details/${id}`} title='Details' />
       </div>
     </StyledProducts>
   );
