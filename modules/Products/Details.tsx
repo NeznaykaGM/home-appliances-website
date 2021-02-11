@@ -28,7 +28,7 @@ const StyledImage = styled.img`
   user-select: none;
   pointer-events: none;
   cursor: crosshair;
-  background: #fafafa;
+  background: white;
 `;
 
 const ButtonWrapper = styled.div`
