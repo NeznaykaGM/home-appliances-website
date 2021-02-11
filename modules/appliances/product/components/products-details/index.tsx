@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Button from '@md-ui/button/main';
 import {
   WrapperDetails,
-  Descriptions,
+  DescriptionsWrapper,
   StyledImage,
   ButtonWrapper,
   ImageDescriptionsWrapper,
@@ -26,13 +26,13 @@ const Details: FC<PropsI> = ({ img, name, price, id, descriptions }) => {
             <StyledImage src={img} />
           </ImageWrapper>
 
-          <Descriptions>
+          <DescriptionsWrapper>
             <div>Name: {name}</div>
             <div>Price: {price}</div>
             <hr />
             <h4>Descriptions:</h4>
             <p>{descriptions}</p>
-          </Descriptions>
+          </DescriptionsWrapper>
 
           <ButtonWrapper>
             <Button url='/' title='Add to cart' />

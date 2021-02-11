@@ -7,7 +7,7 @@ export const WrapperDetails = styled.div`
   background: white;
 `;
 
-export const Descriptions = styled.div`
+export const DescriptionsWrapper = styled.div`
   width: 100%;
   padding-left: 20px;
   font-size: 20px;

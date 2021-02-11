@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledProducts = styled.div`
+export const Wrapper = styled.div`
   width: 300px;
   height: 300px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -21,7 +21,7 @@ export const StyledProducts = styled.div`
   }
 `;
 
-export const StyledDescriptions = styled.div`
+export const DWrapper = styled.div`
   width: 100%;
   display: flex;
   div {

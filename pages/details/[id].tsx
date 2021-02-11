@@ -14,11 +14,9 @@ const DetailsPage = () => {
   return (
     <>
       <MainLayout>
-        {product ? (
-          <Details img={product.img} name={product.name} price={product.price} descriptions={product.descriptions} />
-        ) : (
-          <div>This page is empty</div>
-        )}
+        {product
+          ? (<Details img={product.img} name={product.name} price={product.price} descriptions={product.descriptions} />)
+          : (<div>This page is empty</div>)}
       </MainLayout>
     </>
   );

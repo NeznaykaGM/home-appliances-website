@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
 import Button from '@md-ui/button/main';
-import { StyledProducts, StyledDescriptions, ButtonWrapper } from './views';
+import { Wrapper, DWrapper, ButtonWrapper } from './views';
 
 interface PropsI {
   img: string;
@@ -12,19 +12,19 @@ interface PropsI {
 
 const ProductsCard: FC<PropsI> = ({ img, name, price, id }) => {
   return (
-    <StyledProducts>
+    <Wrapper>
       <Link href={`/details`}>
         <img src={img} alt='img' />
       </Link>
-      <StyledDescriptions>
+      <DWrapper>
         <div>Name: {name}</div>
         <div>Price: {price}</div>
-      </StyledDescriptions>
+      </DWrapper>
       <ButtonWrapper>
         <Button url='/' title='Add to cart' />
         <Button url={`/details/[id]`} asParam={`/details/${id}`} title='Details' />
       </ButtonWrapper>
-    </StyledProducts>
+    </Wrapper>
   );
 };
 
