@@ -9,7 +9,7 @@ const StyledHeader = styled.div`
   display: flex;
   padding: 10px;
 
-  p{
+  p {
     align-self: flex-end;
     justify-content: flex-end;
     margin-left: auto;
