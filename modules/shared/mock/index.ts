@@ -5,7 +5,9 @@ export interface Product {
   img: string;
   descriptions: string;
 }
-export  const products: Product[] = [
+
+
+export const products: Product[] = [
   {
     id: 1,
     name: 'Washer',
@@ -39,13 +41,6 @@ export  const products: Product[] = [
   },
   {
     id: 5,
-    name: 'Blender',
-    price: 543,
-    img: 'https://i2.rozetka.ua/goods/17922630/tefal_infiny_force_3in1_hb943838_images_17922630529.jpg',
-    descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, totam.'
-  },
-  {
-    id: 6,
     name: 'Vacuum cleaner',
     price: 400,
     img: 'https://polaris.company/upload/iblock/657/151_01_1.jpg',

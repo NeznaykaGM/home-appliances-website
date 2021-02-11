@@ -1,14 +1,12 @@
 import React from 'react';
-import Link from 'next/link';
-import { StyledHeader } from './views'
 import { Logo } from '@md-ui/logos/main';
-import {LWrapper} from './views';
+import { LWrapper, StyledHeader } from './views';
 
-const Index = () => {
+const Header = () => {
   return (
     <StyledHeader>
       <LWrapper>
-        <Logo/>
+        <Logo />
       </LWrapper>
       {/*<Link href='/'>*/}
       {/*  <h2 style={{ cursor: 'pointer' }}>Appliances</h2>*/}
@@ -18,5 +16,4 @@ const Index = () => {
   );
 };
 
-export default Index;
-
+export default Header;
