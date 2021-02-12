@@ -4,13 +4,13 @@ import { LWrapper, StyledHeader } from './views';
 import { CartContext } from '@md-modules/shared/providers/cart-context';
 
 const Header = () => {
-  const active = useContext(CartContext);
+  const { countItems, setActive } = useContext(CartContext);
   return (
     <StyledHeader>
       <LWrapper>
         <Logo />
       </LWrapper>
-      <p onClick={() => active.setActive(true)}>Cart: </p>
+      <p onClick={() => setActive(true)}>Cart: {countItems}</p>
     </StyledHeader>
   );
 };

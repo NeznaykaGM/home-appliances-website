@@ -76,13 +76,3 @@ export const CartProducts: Product[] = [
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus culpa dicta doloribus laborum magnam nisi, porro possimus quia quod? A accusantium deleniti doloribus est maxime minus, obcaecati saepe sapiente sit.'
   },
 ];
-
-
-//
-//
-// const addToCart = (obj) => {
-//    const item = {...obj}
-//    CartProducts.push(item);
-// }
-//
-// addToCart(products[4]);
