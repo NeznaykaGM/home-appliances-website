@@ -31,7 +31,7 @@ interface props {
 const Button: FC<props> = ({ url, title, callback, asParam }) => {
   return (
     <Link href={url} as={asParam}>
-      <StyledButton>{title}</StyledButton>
+      <StyledButton >{title}</StyledButton>
     </Link>
   );
 };

@@ -2,6 +2,8 @@ import * as React from 'react';
 import styles from '@md-modules/shared/styles/Home.module.css';
 import ProductsContainer from '@md-modules/appliances/products';
 import { MainLayout } from '@md-modules/shared/layouts/main';
+import Cart from '@md-modules/appliances/Cart/components';
+import { useState } from 'react';
 
 const Home = () => {
   // env example

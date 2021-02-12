@@ -2,18 +2,19 @@ import * as React from 'react';
 import Header from '@md-ui/headers';
 // view components
 import { Wrapper } from './views';
+import CartContainer from '@md-modules/appliances/Cart';
+import CartContextProvider from '@md-modules/shared/providers/cart-context';
 
-import Cart from '@md-ui/cart/main';
-import { useState } from 'react';
 
 const MainLayout: React.FC = ({ children }) => {
-  const [active,setActive] = useState(false);
 
   return (
     <Wrapper>
-      <Header active={active} setActive={setActive}/>
-      {children}
-      <Cart active={active} setActive={setActive}/>
+      <CartContextProvider>
+        <Header/>
+        {children}
+        <CartContainer/>
+      </CartContextProvider>
     </Wrapper>
   );
 };

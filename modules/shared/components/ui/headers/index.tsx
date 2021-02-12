@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Logo } from '@md-ui/logos/main';
 import { LWrapper, StyledHeader } from './views';
+import { CartContext } from '@md-modules/shared/providers/cart-context';
+//
+// interface Props {
+//   active: boolean;
+//   setActive: any;
+// }
 
-interface Props {
-  active: boolean;
-  setActive: any;
-}
-
-const Header: React.FC<Props> = ({active, setActive}) => {
+const Header = () => {
+  const active = useContext(CartContext);
   return (
     <StyledHeader>
       <LWrapper>
         <Logo />
       </LWrapper>
-      <p onClick={() => setActive(true)}>Cart: </p>
+      <p onClick={() => active.setActive(true)}>Cart: </p>
     </StyledHeader>
   );
 };
