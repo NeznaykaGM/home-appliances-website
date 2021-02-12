@@ -1,18 +1,15 @@
 import React from 'react';
-import {MWrapper, MCWrapper} from './views'
-
+import { MWrapper, MCWrapper } from './views';
 
 interface Props {
   active: boolean;
   setActive: any;
 }
-const Cart: React.FC<Props> = ({active, setActive, children}) => {
+const Cart: React.FC<Props> = ({ active, setActive, children }) => {
   return (
-      <MWrapper onClick={() => setActive(false)} opacity={active ? '1': '0'} pointerEvents={active ? 'all' : 'none'}>
-        <MCWrapper onClick={event => event.stopPropagation()}>
-          {children}
-        </MCWrapper>
-      </MWrapper>
+    <MWrapper onClick={() => setActive(false)} opacity={active ? '1' : '0'} pointerEvents={active ? 'all' : 'none'}>
+      <MCWrapper onClick={(event) => event.stopPropagation()}>{children}</MCWrapper>
+    </MWrapper>
   );
 };
 

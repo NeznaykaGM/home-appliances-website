@@ -5,7 +5,7 @@ import CartBLContextProvider from '@md-modules/appliances/Cart/layers/business';
 const CartContainer = () => {
   return (
     <CartBLContextProvider>
-      <CartPresentation/>
+      <CartPresentation />
     </CartBLContextProvider>
   );
 };

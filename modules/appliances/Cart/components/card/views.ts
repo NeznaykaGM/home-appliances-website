@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   margin: 10px;
   background: white;
   position: relative;
-  
+
   img {
     width: 300px;
     height: 200px;
@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
     padding: 2px;
     background: #fafafa;
   }
-` ;
+`;
 
 export const DWrapper = styled.div`
   width: 100%;

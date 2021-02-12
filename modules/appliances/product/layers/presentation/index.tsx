@@ -11,11 +11,19 @@ const DetailsPresentation = () => {
 
   return (
     <>
-        {product
-          ? (<Details key={product.id} img={product.img} name={product.name} price={product.price} descriptions={product.descriptions} />)
-          : (<div>This page is empty</div>)}
+      {product ? (
+        <Details
+          key={product.id}
+          img={product.img}
+          name={product.name}
+          price={product.price}
+          descriptions={product.descriptions}
+        />
+      ) : (
+        <div>This page is empty</div>
+      )}
     </>
-  )
+  );
 };
 
 export default DetailsPresentation;

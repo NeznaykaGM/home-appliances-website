@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react';
 import Link from 'next/link';
 import Button from '@md-ui/button/main';
 import { Wrapper, DWrapper, ButtonWrapper } from './views';
-import { ProductsBLContext } from '../../layers/businnes/index'
+import { ProductsBLContext } from '../../layers/businnes/index';
 
 interface PropsI {
   img: string;
@@ -11,10 +11,8 @@ interface PropsI {
   id?: string | number;
 }
 
-
 const ProductsCard: FC<PropsI> = ({ img, name, price, id }) => {
-
-  const addToCart = useContext(ProductsBLContext)
+  const addToCart = useContext(ProductsBLContext);
 
   return (
     <Wrapper>
