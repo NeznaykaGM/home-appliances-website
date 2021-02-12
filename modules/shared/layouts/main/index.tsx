@@ -1,7 +1,8 @@
 import * as React from 'react';
-// view components
 import Header from '@md-ui/headers';
+// view components
 import { Wrapper } from './views';
+
 import Cart from '@md-ui/cart/main';
 import { useState } from 'react';
 

@@ -6,7 +6,6 @@ interface Props {
   active: boolean;
   setActive: any;
 }
-
 const Cart: React.FC<Props> = ({active, setActive, children}) => {
   return (
       <MWrapper onClick={() => setActive(false)} opacity={active ? '1': '0'} pointerEvents={active ? 'all' : 'none'}>
