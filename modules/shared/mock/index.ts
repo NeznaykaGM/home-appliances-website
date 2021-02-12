@@ -1,15 +1,12 @@
-import React from 'react';
-import Product from './Product';
-import styled from 'styled-components';
-import Button from '../Button';
+export interface Product {
+  name: string;
+  id: string | number;
+  price: number;
+  img: string;
+  descriptions: string;
+}
 
-const StyledContainerProducts = styled.div`
-  justify-content: center;
-  flex-wrap: wrap;
-  display: flex;
-  //position: relative;
-`;
-const PRODUCTS_DATA = [
+export const products: Product[] = [
   {
     id: 1,
     name: 'Washer',
@@ -40,15 +37,12 @@ const PRODUCTS_DATA = [
     price: 1200,
     img: 'https://hotline.ua/img/tx/238/238782043_s265.jpg',
     descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, totam.'
+  },
+  {
+    id: 5,
+    name: 'Vacuum cleaner',
+    price: 400,
+    img: 'https://polaris.company/upload/iblock/657/151_01_1.jpg',
+    descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, totam.'
   }
 ];
-
-const ProductsContainer = () => {
-  const products = PRODUCTS_DATA.map((element) => (
-    <Product key={element.id} img={element.img} name={element.name} price={element.price} id={element.id} />
-  ));
-
-  return <StyledContainerProducts>{products}</StyledContainerProducts>;
-};
-
-export default ProductsContainer;
