@@ -2,7 +2,7 @@ import React from 'react';
 import { CartProducts, Product } from '../../../../shared/mock/index'
 
 interface Context {
-  products: Product[] | undefined;
+  products: Product[];
 }
 
 export const CartBLContext = React.createContext<Context>({

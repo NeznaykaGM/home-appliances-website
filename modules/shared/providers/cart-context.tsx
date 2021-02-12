@@ -6,14 +6,12 @@ export const CartContext = React.createContext<any>({});
 
 const CartContextProvider: React.FC = ({children}) => {
   const [active, setActive] = useState(false)
-  const countItems = CartProducts.length
-
-
+  const countItemCart = CartProducts.length;
   return (
     <CartContext.Provider value={{
       active: active,
       setActive: setActive,
-      countItems
+      countItemCart
     }}>
       {children}
     </CartContext.Provider>

@@ -1,7 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import Link from 'next/link';
 import Button from '@md-ui/button/main';
 import { Wrapper, DWrapper, ButtonWrapper } from './views';
+import { ProductsBLContext } from '../../layers/businnes/index'
 
 interface PropsI {
   img: string;
@@ -10,7 +11,11 @@ interface PropsI {
   id?: string | number;
 }
 
+
 const ProductsCard: FC<PropsI> = ({ img, name, price, id }) => {
+
+  const addToCart = useContext(ProductsBLContext)
+
   return (
     <Wrapper>
       <Link href={`/details`}>
@@ -20,6 +25,7 @@ const ProductsCard: FC<PropsI> = ({ img, name, price, id }) => {
         <div>Name: {name}</div>
         <div>Price: {price}</div>
       </DWrapper>
+      <div onClick={() => addToCart(id)}>Add</div>
       <ButtonWrapper>
         <Button url='/' title='Add to cart' />
         <Button url={`/details/[id]`} asParam={`/details/${id}`} title='Details' />
