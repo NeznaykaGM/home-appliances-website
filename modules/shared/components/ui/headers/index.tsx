@@ -2,16 +2,18 @@ import React from 'react';
 import { Logo } from '@md-ui/logos/main';
 import { LWrapper, StyledHeader } from './views';
 
-const Header = () => {
+interface Props {
+  active: boolean;
+  setActive: any;
+}
+
+const Header: React.FC<Props> = ({active, setActive}) => {
   return (
     <StyledHeader>
       <LWrapper>
         <Logo />
       </LWrapper>
-      {/*<Link href='/'>*/}
-      {/*  <h2 style={{ cursor: 'pointer' }}>Appliances</h2>*/}
-      {/*</Link>*/}
-      <p>Cart: </p>
+      <p onClick={() => setActive(true)}>Cart: </p>
     </StyledHeader>
   );
 };

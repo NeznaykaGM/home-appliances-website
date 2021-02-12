@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+interface Props{
+  opacity: string;
+  pointerEvents: string;
+}
+
+export const MCWrapper = styled.div`
+  background-color: white;
+  padding: 20px;
+  width: 50vw;
+  transition: all 0.4s;
+  border-radius: 10px;
+`
+
 export const MWrapper = styled.div`
   height: 100vh;
   width: 100vw;
@@ -10,12 +23,7 @@ export const MWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
-
-export const MCWrapper = styled.div`
-  background-color: white;
-  padding: 20px;
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
+  opacity: ${({ opacity }: Props) => opacity || 0};
+  pointer-events: ${({ pointerEvents }) => pointerEvents || "none"};
+  transition: 0.5ms;
 `
