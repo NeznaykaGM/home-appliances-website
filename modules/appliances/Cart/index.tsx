@@ -3,9 +3,7 @@ import CartPresentation from '@md-modules/appliances/Cart/layers/presentation';
 
 const CartContainer = () => {
   return (
-    <>
       <CartPresentation/>
-    </>
   );
 };
 
