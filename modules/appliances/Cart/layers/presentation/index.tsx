@@ -15,6 +15,7 @@ const CartPresentation = () => {
 
   return (
     <Cart active={active} setActive={setActive}>
+      <h2>Cart: </h2>
       {productsList}
     </Cart>
   );

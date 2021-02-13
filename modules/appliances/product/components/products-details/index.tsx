@@ -35,7 +35,7 @@ const Details: FC<PropsI> = ({ img, name, price, id, descriptions }) => {
           </DescriptionsWrapper>
 
           <ButtonWrapper>
-            <Button url='/' title='Add to cart' />
+            <Button title={"Add to cart"} type={''}/>
           </ButtonWrapper>
         </ImageDescriptionsWrapper>
       </WrapperDetails>

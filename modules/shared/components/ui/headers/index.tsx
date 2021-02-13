@@ -3,6 +3,8 @@ import { Logo } from '@md-ui/logos/main';
 import { LWrapper, StyledHeader } from './views';
 import { CartContext } from '@md-modules/shared/providers/cart-context';
 
+
+
 const Header = () => {
   const { countItemCart, setActive } = useContext(CartContext);
   return (

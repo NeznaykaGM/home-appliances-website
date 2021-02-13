@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import Button from '@md-ui/button/main';
 import { Wrapper, DWrapper, ButtonWrapper } from './views';
+import Button from '@md-ui/button/main';
 
 interface PropsI {
   img: string;
@@ -21,7 +21,7 @@ const CardForCart: FC<PropsI> = ({ img, name, price, id }) => {
         <div>Price: {price}</div>
       </DWrapper>
       <ButtonWrapper>
-        <Button title={'Delete'} url={'/'} />
+        <Button title={"Delete"} type={'delete'}/>
       </ButtonWrapper>
     </Wrapper>
   );
