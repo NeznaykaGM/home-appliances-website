@@ -1,7 +1,7 @@
 import React from 'react';
 import { Product, CartProducts, products } from '@md-modules/shared/mock';
 
-const addToCart = (id: number) => {
+const addToCart = (id: string | number | undefined) => {
   const product: any = products.find((e) => e.id === id);
   CartProducts.push(product);
 };

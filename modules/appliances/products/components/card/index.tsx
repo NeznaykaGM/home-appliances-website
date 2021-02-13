@@ -23,9 +23,8 @@ const ProductsCard: FC<PropsI> = ({ img, name, price, id }) => {
         <div>Name: {name}</div>
         <div>Price: {price}</div>
       </DWrapper>
-      <div onClick={() => addToCart(id)}>Add</div>
       <ButtonWrapper>
-        <Button url='/' title='Add to cart' />
+        <Button callback={() => addToCart(id)} url='/' title='Add to cart' />
         <Button url={`/details/[id]`} asParam={`/details/${id}`} title='Details' />
       </ButtonWrapper>
     </Wrapper>

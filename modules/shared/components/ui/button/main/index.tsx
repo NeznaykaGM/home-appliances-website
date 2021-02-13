@@ -20,6 +20,13 @@ const StyledButton = styled.div`
     color: white !important;
   }
 `;
+const BWrapper = styled.div`
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;
+`
 
 interface props {
   title: string;
@@ -30,9 +37,11 @@ interface props {
 
 const Button: FC<props> = ({ url, title, callback, asParam }) => {
   return (
-    <Link href={url} as={asParam}>
-      <StyledButton>{title}</StyledButton>
-    </Link>
+    <BWrapper onClick={callback}>
+        <Link href={url} as={asParam}>
+          <StyledButton>{title}</StyledButton>
+        </Link>
+    </BWrapper>
   );
 };
 
