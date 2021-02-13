@@ -21,7 +21,7 @@ const CardForCart: FC<PropsI> = ({ img, name, price, id }) => {
         <div>Price: {price}</div>
       </DWrapper>
       <ButtonWrapper>
-        <Button title={"Delete"} type={'delete'}/>
+        <Button title={"Delete"} type={'delete'} key={id}/>
       </ButtonWrapper>
     </Wrapper>
   );
