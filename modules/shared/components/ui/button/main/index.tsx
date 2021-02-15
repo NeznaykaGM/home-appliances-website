@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyledButton, BWrapper} from './views';
+import { StyledButton, BWrapper } from './views';
 
 interface props {
   title: string;
@@ -7,13 +7,10 @@ interface props {
   type?: string | undefined;
 }
 
-
-const Button: React.FC<props> = ({title, type, callback}) => {
+const Button: React.FC<props> = ({ title, type, callback }) => {
   return (
     <BWrapper onClick={callback}>
-      <StyledButton type={type}>
-        {title}
-      </StyledButton>
+      <StyledButton type={type}>{title}</StyledButton>
     </BWrapper>
   );
 };

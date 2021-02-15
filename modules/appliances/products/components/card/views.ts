@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
   margin: 10px;
   background: white;
   position: relative;
+  border-radius: 10px;
   img {
     width: 100%;
     height: 200px;

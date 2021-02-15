@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Button from '@md-ui/button/main';
 import {
-  WrapperDetails,
+  DetailsWrapper,
   DescriptionsWrapper,
   StyledImage,
   ButtonWrapper,
@@ -9,18 +9,18 @@ import {
   ImageWrapper
 } from './views';
 
-interface PropsI {
+interface Props {
   img: string;
-  name?: string;
-  price?: string | number;
-  id?: string | number;
+  name: string;
+  price: string | number;
+  id: string | number;
   descriptions?: string;
 }
 
-const Details: FC<PropsI> = ({ img, name, price, id, descriptions }) => {
+const Details: FC<Props> = ({ img, name, price, id, descriptions }) => {
   return (
     <>
-      <WrapperDetails>
+      <DetailsWrapper>
         <ImageDescriptionsWrapper>
           <ImageWrapper>
             <StyledImage src={img} />
@@ -35,10 +35,10 @@ const Details: FC<PropsI> = ({ img, name, price, id, descriptions }) => {
           </DescriptionsWrapper>
 
           <ButtonWrapper>
-            <Button key={id} title={"Add to cart"} type={''}/>
+            <Button key={id} title={'Add to cart'} type={''} />
           </ButtonWrapper>
         </ImageDescriptionsWrapper>
-      </WrapperDetails>
+      </DetailsWrapper>
     </>
   );
 };

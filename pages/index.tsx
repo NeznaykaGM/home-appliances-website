@@ -1,8 +1,8 @@
 import * as React from 'react';
 import styles from '@md-modules/shared/styles/Home.module.css';
 import ProductsContainer from '@md-modules/appliances/products';
-import { MainLayout }  from '@md-modules/shared/layouts/main';
-import Button from '@md-ui/button/main';
+import { MainLayout } from '@md-modules/shared/layouts/main';
+
 
 const Home = () => {
   // env example

@@ -3,14 +3,15 @@ import Link from 'next/link';
 import { Wrapper, DWrapper, ButtonWrapper } from './views';
 import Button from '@md-ui/button/main';
 
-interface PropsI {
+interface Props {
   img: string;
-  name?: string;
-  price?: string | number;
-  id?: string | number;
+  name: string;
+  price: string | number;
+  id: string | number;
+  deleteProductFromCart: (id: string | number) => void
 }
 
-const CardForCart: FC<PropsI> = ({ img, name, price, id }) => {
+const CardForCart: FC<Props> = ({ deleteProductFromCart, img, name, price, id }) => {
   return (
     <Wrapper>
       <Link href={`/details`}>
@@ -21,7 +22,7 @@ const CardForCart: FC<PropsI> = ({ img, name, price, id }) => {
         <div>Price: {price}</div>
       </DWrapper>
       <ButtonWrapper>
-        <Button title={"Delete"} type={'delete'} key={id}/>
+        <Button callback={() => deleteProductFromCart(id)} title={'Delete'} type={'delete'} key={id} />
       </ButtonWrapper>
     </Wrapper>
   );

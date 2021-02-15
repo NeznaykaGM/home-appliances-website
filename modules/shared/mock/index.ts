@@ -1,5 +1,3 @@
-import { useEffect, useMemo } from 'react';
-
 export interface Product {
   name: string;
   id: string | number;
@@ -49,7 +47,7 @@ export const products: Product[] = [
   }
 ];
 
-export const CartProducts: Product[] = [
+export const getCartProducts = () => [
   {
     id: 1,
     name: 'Washer',
@@ -59,5 +57,5 @@ export const CartProducts: Product[] = [
     descriptions:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus culpa dicta doloribus laborum magnam nisi, porro possimus quia quod? A accusantium deleniti doloribus est maxime minus, obcaecati saepe sapiente sit.'
   }
-];
-export const CountItems = CartProducts.length;
+] as Product[];
+

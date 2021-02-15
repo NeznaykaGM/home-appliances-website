@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledHeader = styled.div`
+export const WHeader = styled.div`
   width: 100%;
   max-height: 50px;
   background: #5856d6;

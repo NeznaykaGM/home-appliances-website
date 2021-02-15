@@ -7,12 +7,13 @@ const DetailsPresentation = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  const product = products.find((element) => (element.id.toString() === id ? element : undefined));
+  const product = products.find((element) => (element.id == id ? element : undefined));
 
   return (
     <>
       {product ? (
         <Details
+          id={product.id}
           key={product.id}
           img={product.img}
           name={product.name}

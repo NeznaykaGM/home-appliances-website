@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const WrapperDetails = styled.div`
+export const DetailsWrapper = styled.div`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   margin: 10px;
   position: relative;

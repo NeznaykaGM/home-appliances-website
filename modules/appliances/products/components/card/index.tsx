@@ -5,15 +5,15 @@ import Button from '@md-ui/button/main';
 import { Wrapper, DWrapper, ButtonWrapper } from './views';
 import { ProductsBLContext } from '../../layers/businnes/index';
 
-interface PropsI {
+interface Props {
   img: string;
-  name?: string;
-  price?: string | number;
-  id?: string | number;
+  name: string;
+  price: string | number;
+  id: string | number;
 }
 
-const ProductsCard: FC<PropsI> = ({ img, name, price, id }) => {
-  const addToCart = useContext(ProductsBLContext);
+const ProductsCard: FC<Props> = ({ img, name, price, id }) => {
+  const { addToCart } = useContext(ProductsBLContext);
   return (
     <Wrapper>
       <Link href={`/details`}>
@@ -24,8 +24,8 @@ const ProductsCard: FC<PropsI> = ({ img, name, price, id }) => {
         <div>Price: {price}</div>
       </DWrapper>
       <ButtonWrapper>
-        <LButton url={`/`} callback={() => addToCart(id)} title='Add to cart' key={id} />
-        <LButton key={id} url={`/details/[id]`} asParam={`/details/${id}`} title='Details' />
+        <Button callback={() => addToCart(id)} title='Add to cart' />
+        <LButton url={`/details/[id]`} asParam={`/details/${id}`} title='Details' />
       </ButtonWrapper>
     </Wrapper>
   );
