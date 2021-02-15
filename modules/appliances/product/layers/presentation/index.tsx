@@ -8,7 +8,6 @@ import { ContentLoader } from '@md-ui/loaders/content-loader';
 const DetailsPresentation = () => {
   const { isLoading } = React.useContext(ProductAPIContext);
   const { productInfo } = React.useContext(ProductBLContext);
-
   return (
     <ContentLoader isLoading={isLoading}>
       {productInfo.map((element) => (
