@@ -13,7 +13,14 @@ const CartPresentation = () => {
     <Cart active={active} setActive={setActive}>
       <h2>Cart: </h2>
       {products.map((element) => (
-        <CardForCart deleteProductFromCart={deleteProductFromCart} id={element.id} img={element.img} name={element.name} price={element.price} key={element.id} />
+        <CardForCart
+          deleteProductFromCart={deleteProductFromCart}
+          id={element.id}
+          img={element.img}
+          name={element.name}
+          price={element.price}
+          key={element.id}
+        />
       ))}
     </Cart>
   );

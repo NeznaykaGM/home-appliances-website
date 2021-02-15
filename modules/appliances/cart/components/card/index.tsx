@@ -8,7 +8,7 @@ interface Props {
   name: string;
   price: string | number;
   id: string | number;
-  deleteProductFromCart: (id: string | number) => void
+  deleteProductFromCart: (id: string | number) => void;
 }
 
 const CardForCart: FC<Props> = ({ deleteProductFromCart, img, name, price, id }) => {

@@ -1,29 +1,20 @@
 import React from 'react';
-import { useRouter } from 'next/router';
-import { products } from '@md-modules/shared/mock';
 import Details from '@md-modules/appliances/product/components/products-details';
+// context
+import { ProductAPIContext } from '../api/product';
+import { ProductBLContext } from '../business/index';
+import { ContentLoader } from '@md-ui/loaders/content-loader';
 
 const DetailsPresentation = () => {
-  const router = useRouter();
-  const { id } = router.query;
-
-  const product = products.find((element) => (element.id == id ? element : undefined));
+  const { isLoading } = React.useContext(ProductAPIContext);
+  const { productInfo } = React.useContext(ProductBLContext);
 
   return (
-    <>
-      {product ? (
-        <Details
-          id={product.id}
-          key={product.id}
-          img={product.img}
-          name={product.name}
-          price={product.price}
-          descriptions={product.descriptions}
-        />
-      ) : (
-        <div>This page is empty</div>
-      )}
-    </>
+    <ContentLoader isLoading={isLoading}>
+      {productInfo.map((element) => (
+        <Details key={element.id} img={element.img} name={element.name} price={element.price} id={element.id} />
+      ))}
+    </ContentLoader>
   );
 };
 
