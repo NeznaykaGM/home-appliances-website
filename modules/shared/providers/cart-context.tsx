@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { getCartProducts, Product } from '@md-modules/shared/mock';
+import { CartProducts, Product } from '@md-modules/shared/mock';
 
 interface Context {
   cartProducts: Product[];
@@ -8,6 +8,7 @@ interface Context {
   setActive: (isActive: boolean) => void;
   countItemCart: number;
   deleteProductFromCart: (productId: string | number) => void;
+  totalAmountItemCart: number;
 }
 
 export const CartContext = React.createContext<Context>({
@@ -16,12 +17,13 @@ export const CartContext = React.createContext<Context>({
   active: false,
   setActive: (_isActive) => {},
   countItemCart: 0,
-  deleteProductFromCart: (_productId) => {}
+  deleteProductFromCart: (_productId) => {},
+  totalAmountItemCart: 0,
 });
 
 const CartContextProvider: React.FC = ({ children }) => {
   const [active, setActive] = useState(false);
-  const [cartProducts, setCartProducts] = useState([] as Product[]);
+  const [cartProducts, setCartProducts] = useState(CartProducts);
 
   const deleteProductFromCart = useCallback(
     (productId: string | number) => {
@@ -30,6 +32,8 @@ const CartContextProvider: React.FC = ({ children }) => {
     },
     [cartProducts]
   );
+
+
 
   const addProductToCart = useCallback(
     (product: Product) => {
@@ -49,10 +53,11 @@ const CartContextProvider: React.FC = ({ children }) => {
     }
   }, [cartProducts]);
 
-  useEffect(() => {
-    setCartProducts(getCartProducts());
-  }, []);
   const countItemCart = useMemo(() => cartProducts.length, [cartProducts]);
+
+  let totalAmountItemCart = 0;
+  cartProducts.forEach(e => totalAmountItemCart += e.price )
+
   return (
     <CartContext.Provider
       value={{
@@ -61,7 +66,8 @@ const CartContextProvider: React.FC = ({ children }) => {
         active,
         setActive,
         countItemCart,
-        deleteProductFromCart
+        deleteProductFromCart,
+        totalAmountItemCart
       }}
     >
       {children}

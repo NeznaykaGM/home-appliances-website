@@ -3,10 +3,12 @@ import Button from '@md-ui/button/main';
 import {
   DetailsWrapper,
   DescriptionsWrapper,
-  StyledImage,
+  TitleWrapper,
+  Image,
   ButtonWrapper,
   ImageDescriptionsWrapper,
-  ImageWrapper
+  ImageWrapper,
+  Title
 } from './views';
 
 interface Props {
@@ -15,15 +17,19 @@ interface Props {
   price: string | number;
   id: string | number;
   descriptions?: string;
+  callback: () => {};
 }
 
-const Details: FC<Props> = ({ img, name, price, id, descriptions }) => {
+const Details: FC<Props> = ({callback, img, name, price, id, descriptions }) => {
   return (
     <>
       <DetailsWrapper>
+        {/*<TitleWrapper>*/}
+        {/*  <Title>{name}</Title>*/}
+        {/*</TitleWrapper>*/}
         <ImageDescriptionsWrapper>
           <ImageWrapper>
-            <StyledImage src={img} />
+            <Image src={img} />
           </ImageWrapper>
 
           <DescriptionsWrapper>
@@ -35,7 +41,7 @@ const Details: FC<Props> = ({ img, name, price, id, descriptions }) => {
           </DescriptionsWrapper>
 
           <ButtonWrapper>
-            <Button key={id} title={'Add to cart'} type={''} />
+            <Button callback={callback} key={id} title={'Add to cart'} type={''} />
           </ButtonWrapper>
         </ImageDescriptionsWrapper>
       </DetailsWrapper>

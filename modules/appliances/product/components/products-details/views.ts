@@ -17,7 +17,8 @@ export const DescriptionsWrapper = styled.div`
   }
 `;
 
-export const StyledImage = styled.img`
+export const Image = styled.img`
+  border-radius: 15px;
   max-width: 300px;
   max-height: 300px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -50,3 +51,16 @@ export const ImageWrapper = styled.div`
   width: 300px;
   height: 100%;
 `;
+
+export const TitleWrapper = styled.div`
+  padding: 10px;
+  text-align: center;
+`
+export const Title = styled.h2`
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  color: black;
+  display: inline-block;
+  border-radius: 50px;
+  background-color: #fafafa;
+`

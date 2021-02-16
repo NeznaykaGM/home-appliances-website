@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const getEntityMock = <A>(data: A): Promise<A> => new Promise((resolve) => setTimeout(() => resolve(data), 500));
+const getEntityMock = <A>(data: A): Promise<A> => new Promise((resolve) => setTimeout(() => resolve(data), 300));
 
 interface QueryState<A> {
   data: A | undefined;

@@ -5,10 +5,26 @@ interface Props {
   pointerEvents: string;
 }
 
-export const MCWrapper = styled.div`
+export const ChildrenWrapper = styled.div`
   overflow-y: scroll;
-  background-color: white;
-  padding: 20px;
+  width: 100%;
+  height: 560px;
+  &::-webkit-scrollbar {
+    border-radius: 10px;
+    width: 8px;
+    background-color: white;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #cfcfcf;
+  }
+  &::-webkit-scrollbar-thumb:active {
+    background-color: #7b7b7b;
+  }
+`
+export const MCWrapper = styled.div`
+  background: #FAFAFA;
+  padding: 10px;
   width: 50vw;
   height: 600px;
   transition: all 0.4s;

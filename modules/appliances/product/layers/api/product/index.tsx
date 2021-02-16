@@ -1,10 +1,12 @@
 import React from 'react';
-import { products, Product } from '@md-modules/shared/mock';
-import { useQuery } from '@md-utils/mock/query';
 import { useRouter } from 'next/router';
+//query
+import { useQuery } from '@md-utils/mock/query';
+//mock
+import { products, Product } from '@md-modules/shared/mock';
 
 interface Context {
-  product: Product | undefined;
+  product: Product |undefined;
   isLoading: boolean;
 }
 
@@ -18,6 +20,7 @@ const ProductAPIContextProvider: React.FC = ({ children }) => {
   const router = useRouter();
   const { id } = router.query
   const { data, loading } = useQuery(products.find((e)=> e.id == id));
+
 
   return (
     <ProductAPIContext.Provider
