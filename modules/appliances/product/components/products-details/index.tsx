@@ -17,7 +17,7 @@ interface Props {
   price: string | number;
   id: string | number;
   descriptions?: string;
-  callback: () => {};
+  callback: () => void;
 }
 
 const Details: FC<Props> = ({callback, img, name, price, id, descriptions }) => {

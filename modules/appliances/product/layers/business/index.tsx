@@ -34,7 +34,7 @@ const ProductBLContextProvider: React.FC = ({ children }) => {
   //Add to cart button callback
   const { addProductToCart } = useContext(CartContext);
   const addToCart = () => {
-    addProductToCart(product);
+    addProductToCart(product as Product);
   };
 
   return (
