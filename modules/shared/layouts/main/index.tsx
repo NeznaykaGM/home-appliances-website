@@ -17,5 +17,4 @@ const MainLayout: React.FC = ({ children }) => {
   );
 };
 
-
 export { MainLayout };
