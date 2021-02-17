@@ -12,7 +12,7 @@ export const products: Product[] = [
     name: 'Washer',
     price: 100,
     img:
-      'https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/d/_/d_z01.jpg',
+      'https://cdn.comfy.ua/media/catalog/product/cache/4/image/1440x1080/62defc7f46f3fbfc8afcd112227d1181/f/2/f2j3ws2w_04_right.jpg',
     descriptions:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus culpa dicta doloribus laborum magnam nisi, porro possimus quia quod? A accusantium deleniti doloribus est maxime minus, obcaecati saepe sapiente sit.'
   },
@@ -46,3 +46,5 @@ export const products: Product[] = [
     descriptions: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, totam.'
   }
 ];
+
+export const CartProducts = [];

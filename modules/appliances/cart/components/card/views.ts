@@ -1,21 +1,16 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  &:hover {
-    box-shadow: 0 0 8px rgba(0.2, 0.2, 0.2, 0.5);
-    transition: box-shadow 0.2s linear;
-  }
-  width: 300px;
-  height: 300px;
+  width: 95vh;
+  height: 40vh;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   padding: 10px;
   margin: 10px;
   background: white;
   position: relative;
-  border-radius: 10px;
-  transition: box-shadow 0.1s linear;
+
   img {
-    width: 100%;
+    width: 300px;
     height: 200px;
     overflow: hidden;
     text-align: right;
@@ -36,10 +31,6 @@ export const DWrapper = styled.div`
 `;
 
 export const ButtonWrapper = styled.div`
-  div {
-    margin-right: 2px;
-    margin-bottom: 2px;
-  }
   float: right;
   display: flex;
   position: absolute;

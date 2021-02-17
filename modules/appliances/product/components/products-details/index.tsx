@@ -1,29 +1,30 @@
 import React, { FC } from 'react';
 import Button from '@md-ui/button/main';
 import {
-  WrapperDetails,
+  DetailsWrapper,
   DescriptionsWrapper,
-  StyledImage,
+  Image,
   ButtonWrapper,
   ImageDescriptionsWrapper,
   ImageWrapper
 } from './views';
 
-interface PropsI {
+interface Props {
   img: string;
-  name?: string;
-  price?: string | number;
-  id?: string | number;
+  name: string;
+  price: string | number;
+  id: string | number;
   descriptions?: string;
+  callback: () => void;
 }
 
-const Details: FC<PropsI> = ({ img, name, price, id, descriptions }) => {
+const Details: FC<Props> = ({ callback, img, name, price, id, descriptions }) => {
   return (
     <>
-      <WrapperDetails>
+      <DetailsWrapper>
         <ImageDescriptionsWrapper>
           <ImageWrapper>
-            <StyledImage src={img} />
+            <Image src={img} />
           </ImageWrapper>
 
           <DescriptionsWrapper>
@@ -35,10 +36,10 @@ const Details: FC<PropsI> = ({ img, name, price, id, descriptions }) => {
           </DescriptionsWrapper>
 
           <ButtonWrapper>
-            <Button url='/' title='Add to cart' />
+            <Button callback={callback} key={id} title={'Add to cart'} type={''} />
           </ButtonWrapper>
         </ImageDescriptionsWrapper>
-      </WrapperDetails>
+      </DetailsWrapper>
     </>
   );
 };

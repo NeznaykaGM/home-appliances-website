@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Logo } from '@md-ui/logos/main';
-import { LWrapper, StyledHeader } from './views';
+import { LWrapper, WHeader } from './views';
+import { CartContext } from '@md-modules/shared/providers/cart-context';
 
 const Header = () => {
+  const { countItemCart, setActive } = useContext(CartContext);
   return (
-    <StyledHeader>
+    <WHeader>
       <LWrapper>
         <Logo />
       </LWrapper>
-      {/*<Link href='/'>*/}
-      {/*  <h2 style={{ cursor: 'pointer' }}>Appliances</h2>*/}
-      {/*</Link>*/}
-      <p>Cart: </p>
-    </StyledHeader>
+      <p onClick={() => setActive(true)}>Cart: {countItemCart}</p>
+    </WHeader>
   );
 };
 

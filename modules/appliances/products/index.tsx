@@ -1,20 +1,16 @@
 import React from 'react';
-import ProductsCard from './components/card';
-import styled from 'styled-components';
-import { products } from '../../shared/mock';
-
-const StyledContainerProducts = styled.div`
-  justify-content: center;
-  flex-wrap: wrap;
-  display: flex;
-`;
+import ProductsPresentation from '@md-modules/appliances/products/layers/presentation';
+import ProductsBLContextProvider from '@md-modules/appliances/products/layers/businnes';
+import { ProductsAPIContextProvider } from '@md-modules/appliances/products/layers/api/products';
 
 const ProductsContainer = () => {
-  const productsList = products.map((element) => (
-    <ProductsCard key={element.id} img={element.img} name={element.name} price={element.price} id={element.id} />
-  ));
-
-  return <StyledContainerProducts>{productsList}</StyledContainerProducts>;
+  return (
+    <ProductsAPIContextProvider>
+      <ProductsBLContextProvider>
+        <ProductsPresentation />
+      </ProductsBLContextProvider>
+    </ProductsAPIContextProvider>
+  );
 };
 
 export default ProductsContainer;
