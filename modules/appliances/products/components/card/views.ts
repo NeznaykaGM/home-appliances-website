@@ -36,7 +36,7 @@ export const DWrapper = styled.div`
 `;
 
 export const ButtonWrapper = styled.div`
-  div{
+  div {
     margin-right: 2px;
     margin-bottom: 2px;
   }

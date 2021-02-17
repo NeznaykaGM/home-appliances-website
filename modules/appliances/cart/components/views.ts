@@ -21,9 +21,9 @@ export const ChildrenWrapper = styled.div`
   &::-webkit-scrollbar-thumb:active {
     background-color: #7b7b7b;
   }
-`
+`;
 export const MCWrapper = styled.div`
-  background: #FAFAFA;
+  background: #fafafa;
   padding: 10px;
   width: 50vw;
   height: 600px;

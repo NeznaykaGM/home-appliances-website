@@ -6,7 +6,7 @@ import { useQuery } from '@md-utils/mock/query';
 import { products, Product } from '@md-modules/shared/mock';
 
 interface Context {
-  product: Product |undefined;
+  product: Product | undefined;
   isLoading: boolean;
 }
 
@@ -18,9 +18,8 @@ const ProductAPIContext = React.createContext<Context>({
 const ProductAPIContextProvider: React.FC = ({ children }) => {
   // make api call here
   const router = useRouter();
-  const { id } = router.query
-  const { data, loading } = useQuery(products.find((e)=> e.id == id));
-
+  const { id } = router.query;
+  const { data, loading } = useQuery(products.find((e) => e.id == id));
 
   return (
     <ProductAPIContext.Provider

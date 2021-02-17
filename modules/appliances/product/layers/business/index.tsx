@@ -10,7 +10,7 @@ interface Context {
 
 const ProductBLContext = React.createContext<Context>({
   productInfo: [],
-  addToCart: () => {},
+  addToCart: () => {}
 });
 
 const ProductBLContextProvider: React.FC = ({ children }) => {
@@ -26,8 +26,8 @@ const ProductBLContextProvider: React.FC = ({ children }) => {
         name: product.name,
         price: product.price,
         img: product.img,
-        descriptions: product.descriptions,
-      },
+        descriptions: product.descriptions
+      }
     ];
   }, [typeof product === 'undefined']);
 
@@ -41,7 +41,7 @@ const ProductBLContextProvider: React.FC = ({ children }) => {
     <ProductBLContext.Provider
       value={{
         productInfo,
-        addToCart,
+        addToCart
       }}
     >
       {children}

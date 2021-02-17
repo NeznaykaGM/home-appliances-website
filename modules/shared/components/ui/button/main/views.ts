@@ -5,7 +5,6 @@ interface Props {
 }
 
 export const StyledButton = styled.div`
-  
   max-height: 100px;
   max-width: 100px;
   padding: 8px;

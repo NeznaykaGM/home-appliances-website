@@ -11,12 +11,15 @@ const DetailsPresentation = () => {
   return (
     <ContentLoader isLoading={isLoading}>
       {productInfo.map((element) => (
-        <Details callback={addToCart}
-                 descriptions={element.descriptions}
-                 key={element.id} img={element.img}
-                 name={element.name}
-                 price={element.price}
-                 id={element.id} />
+        <Details
+          callback={addToCart}
+          descriptions={element.descriptions}
+          key={element.id}
+          img={element.img}
+          name={element.name}
+          price={element.price}
+          id={element.id}
+        />
       ))}
     </ContentLoader>
   );

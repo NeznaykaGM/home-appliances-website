@@ -3,6 +3,7 @@ import styles from '@md-modules/shared/styles/Home.module.css';
 import ProductsContainer from '@md-modules/appliances/products';
 import { MainLayout } from '@md-modules/shared/layouts/main';
 
+
 const Home = () => {
   // env example
   // console.log(process.env.ANALYTICS_ID) for server side
@@ -13,5 +14,7 @@ const Home = () => {
     </MainLayout>
   );
 };
+
+
 
 export default Home;

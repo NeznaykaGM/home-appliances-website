@@ -13,7 +13,7 @@ const CartPresentation = () => {
 
   return (
     <>
-    <Cart active={active} setActive={setActive} totalAmountItemCart={totalAmountItemCart}>
+      <Cart active={active} setActive={setActive} totalAmountItemCart={totalAmountItemCart}>
         <h2>Cart: {countItemCart}</h2>
         {products.map((element) => (
           <CardForCart
@@ -25,11 +25,9 @@ const CartPresentation = () => {
             key={element.id}
           />
         ))}
-    </Cart>
-  </>
+      </Cart>
+    </>
   );
 };
-
-
 
 export default CartPresentation;

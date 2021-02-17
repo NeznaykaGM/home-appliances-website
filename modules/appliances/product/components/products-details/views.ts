@@ -55,7 +55,7 @@ export const ImageWrapper = styled.div`
 export const TitleWrapper = styled.div`
   padding: 10px;
   text-align: center;
-`
+`;
 export const Title = styled.h2`
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   padding: 10px;
@@ -63,4 +63,4 @@ export const Title = styled.h2`
   display: inline-block;
   border-radius: 50px;
   background-color: #fafafa;
-`
+`;

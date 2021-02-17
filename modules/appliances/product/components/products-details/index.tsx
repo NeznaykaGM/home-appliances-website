@@ -20,7 +20,7 @@ interface Props {
   callback: () => void;
 }
 
-const Details: FC<Props> = ({callback, img, name, price, id, descriptions }) => {
+const Details: FC<Props> = ({ callback, img, name, price, id, descriptions }) => {
   return (
     <>
       <DetailsWrapper>
