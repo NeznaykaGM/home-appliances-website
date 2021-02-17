@@ -12,12 +12,12 @@ interface Context {
 }
 
 export const CartContext = React.createContext<Context>({
-  addProductToCart: (_product) => {},
+  addProductToCart: () => {},
   cartProducts: [],
   active: false,
-  setActive: (_isActive) => {},
+  setActive: () => {},
   countItemCart: 0,
-  deleteProductFromCart: (_productId) => {},
+  deleteProductFromCart: () => {},
   totalAmountItemCart: 0
 });
 

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Logo } from '@md-ui/logos/main';
-import { LWrapper, WHeader } from './views';
+import { LWrapper, WHeader} from './views';
 import { CartContext } from '@md-modules/shared/providers/cart-context';
 
 const Header = () => {

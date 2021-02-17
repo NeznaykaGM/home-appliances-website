@@ -1,14 +1,12 @@
 import React, { useContext } from 'react';
 import Cart from '@md-modules/appliances/cart/components';
 import CardForCart from '@md-modules/appliances/cart/components/card';
+//context
 import { CartContext } from '@md-modules/shared/providers/cart-context';
 import { CartBLContext } from '../business/index';
-import { AmountWrapper } from '../../views';
-import styled from 'styled-components';
 
 const CartPresentation = () => {
   const { active, setActive } = useContext(CartContext);
-
   const { products, deleteProductFromCart, countItemCart, totalAmountItemCart } = useContext(CartBLContext);
 
   return (

@@ -13,4 +13,4 @@ const ProductsContainer = () => {
   );
 };
 
-export default ProductsContainer;
+export { ProductsContainer };

@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+//type
 import { Product } from '../../../../shared/mock';
+//context
 import { CartContext } from '@md-modules/shared/providers/cart-context';
 
 interface Context {

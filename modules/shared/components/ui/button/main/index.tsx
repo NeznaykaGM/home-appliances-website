@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledButton, BWrapper } from './views';
+import { BWrapper, StyledButton } from './views';
 
 interface props {
   title: string;
