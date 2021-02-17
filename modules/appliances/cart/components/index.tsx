@@ -1,6 +1,6 @@
 import React from 'react';
-import { MWrapper, MCWrapper, ChildrenWrapper } from './views';
-import { AmountWrapper } from '@md-modules/appliances/cart/views';
+//views
+import { MWrapper, MCWrapper, ChildrenWrapper, AmountWrapper } from './views';
 
 interface Props {
   active: boolean;

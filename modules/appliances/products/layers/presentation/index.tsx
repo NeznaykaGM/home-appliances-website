@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import { ProductsBLContext } from '../businnes/index';
 import ProductsCard from '@md-modules/appliances/products/components/card';
-import { ProductsContainer } from './views';
-import { ProductsAPIContext } from '@md-modules/appliances/products/layers/api/products';
 import { ContentLoader } from '@md-ui/loaders/content-loader';
+import { ProductsContainer } from './views';
+//context
+import { ProductsBLContext } from '../businnes/index';
+import { ProductsAPIContext } from '@md-modules/appliances/products/layers/api/products';
 
 const ProductsPresentation = () => {
   const { productsList } = useContext(ProductsBLContext);

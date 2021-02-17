@@ -47,3 +47,11 @@ export const MWrapper = styled.div`
   pointer-events: ${({ pointerEvents }) => pointerEvents || 'none'};
   transition: 0.5ms;
 `;
+export const AmountWrapper = styled.div`
+  text-align: center;
+  font-size: 16px;
+  color: #43484d;
+  font-weight: 400;
+  padding: 5px;
+  background: #fafafa;
+`;
