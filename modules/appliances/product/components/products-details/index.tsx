@@ -15,10 +15,10 @@ interface Props {
   price: string | number;
   id: string | number;
   descriptions?: string;
-  callback: () => void;
+  onClick: () => void;
 }
 
-const Details: FC<Props> = ({ callback, img, name, price, id, descriptions }) => {
+const Details: FC<Props> = ({ onClick, img, name, price, id, descriptions }) => {
   return (
     <>
       <DetailsWrapper>
@@ -36,7 +36,7 @@ const Details: FC<Props> = ({ callback, img, name, price, id, descriptions }) =>
           </DescriptionsWrapper>
 
           <ButtonWrapper>
-            <Button callback={callback} key={id} title={'Add to cart'} type={''} />
+            <Button onClick={onClick} key={id} title={'Add to cart'} type={''} />
           </ButtonWrapper>
         </ImageDescriptionsWrapper>
       </DetailsWrapper>

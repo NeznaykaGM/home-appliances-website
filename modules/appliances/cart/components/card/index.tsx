@@ -22,7 +22,7 @@ const CardForCart: FC<Props> = ({ deleteProductFromCart, img, name, price, id })
         <div>Price: {price}</div>
       </DWrapper>
       <ButtonWrapper>
-        <Button callback={() => deleteProductFromCart(id)} title={'Delete'} type={'delete'} key={id} />
+        <Button onClick={() => deleteProductFromCart(id)} title={'Delete'} type={'delete'} key={id} />
       </ButtonWrapper>
     </Wrapper>
   );

@@ -24,7 +24,7 @@ const ProductsCard: FC<Props> = ({ img, name, price, id }) => {
         <div>Price: {price}</div>
       </DWrapper>
       <ButtonWrapper>
-        <Button callback={() => addToCart(id)} title='Add to cart' />
+        <Button onClick={() => addToCart(id)} title='Add to cart' />
         <LButton url={`/details/[id]`} asParam={`/details/${id}`} title='Details' />
       </ButtonWrapper>
     </Wrapper>

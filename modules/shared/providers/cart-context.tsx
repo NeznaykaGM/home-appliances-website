@@ -32,7 +32,11 @@ const CartContextProvider: React.FC = ({ children }) => {
   }
 
   useEffect(() => {
-    setCartProducts(JSON.parse(localStorage.getItem('CartState')));
+    try{
+      setCartProducts(JSON.parse(localStorage.getItem('CartState') as string));
+    }catch (e) {
+      setCartProducts([]);
+    }
   }, []);
 
   useEffect(() => {
