@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
 import { CartProducts, Product } from '@md-modules/shared/mock';
+//hooks
+import React, { useEffect, useMemo, useState } from 'react';
 import { useLocalStorage } from '@md-utils/localstorage';
 //context
 interface Context {
