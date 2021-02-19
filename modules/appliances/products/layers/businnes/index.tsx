@@ -6,7 +6,7 @@ import { ProductsAPIContext } from '@md-modules/appliances/products/layers/api/p
 import { Product } from '@md-modules/shared/mock';
 
 interface Context {
-  addToCart: (id: string | number | undefined) => void;
+  addToCart: (id: number | undefined) => void;
   productsList: Product[];
 }
 
@@ -23,7 +23,7 @@ const ProductsBLContextProvider: React.FC = ({ children }) => {
     return products;
   }, [typeof products === 'undefined']);
 
-  const addToCart = (id: string | number | undefined) => {
+  const addToCart = (id: number | undefined) => {
     const product = productsList.find((e) => e.id === id) as Product;
 
     addProductToCart(product);

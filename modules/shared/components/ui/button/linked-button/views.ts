@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledButton = styled.div`
+export const Button = styled.div`
   max-height: 100px;
   max-width: 100px;
   padding: 8px;
@@ -8,10 +8,6 @@ export const StyledButton = styled.div`
   border-radius: 20px;
   border: 1px solid #34c759;
   transition: all ease 0.2s;
-  a {
-    text-decoration: none;
-    color: black !important;
-  }
   &:hover {
     background: #34c759;
     //transition: all ease 0.2s;

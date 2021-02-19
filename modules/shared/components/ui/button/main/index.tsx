@@ -1,16 +1,16 @@
 import React from 'react';
-import { BWrapper, StyledButton } from './views';
+import { BWrapper, WButton } from './views';
 
 interface props {
   title: string;
-  callback?: any;
+  onClick?: any;
   type?: string | undefined;
 }
 
-const Button: React.FC<props> = ({ title, type, callback }) => {
+const Button: React.FC<props> = ({ title, type, onClick }) => {
   return (
-    <BWrapper onClick={callback}>
-      <StyledButton type={type}>{title}</StyledButton>
+    <BWrapper onClick={onClick}>
+      <WButton type={type}>{title}</WButton>
     </BWrapper>
   );
 };

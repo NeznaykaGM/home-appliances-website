@@ -6,9 +6,9 @@ import Button from '@md-ui/button/main';
 interface Props {
   img: string;
   name: string;
-  price: string | number;
-  id: string | number;
-  deleteProductFromCart: (id: string | number) => void;
+  price: number;
+  id: number;
+  deleteProductFromCart: (id: number) => void;
 }
 
 const CardForCart: FC<Props> = ({ deleteProductFromCart, img, name, price, id }) => {
@@ -22,7 +22,7 @@ const CardForCart: FC<Props> = ({ deleteProductFromCart, img, name, price, id })
         <div>Price: {price}</div>
       </DWrapper>
       <ButtonWrapper>
-        <Button callback={() => deleteProductFromCart(id)} title={'Delete'} type={'delete'} key={id} />
+        <Button onClick={() => deleteProductFromCart(id)} title={'Delete'} type={'delete'} key={id} />
       </ButtonWrapper>
     </Wrapper>
   );

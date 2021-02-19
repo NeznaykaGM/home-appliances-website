@@ -1,19 +1,19 @@
 import React, { FC } from 'react';
 import Link from 'next/link';
-import { StyledButton, BWrapper } from './views';
+import { Button, BWrapper } from './views';
 
 interface Props {
   title: string;
   url: string;
-  callback?: any;
+  onClick?: any;
   asParam?: string;
 }
 
-const LButton: FC<Props> = ({ url, title, callback, asParam }) => {
+const LButton: FC<Props> = ({ url, title, onClick, asParam }) => {
   return (
-    <BWrapper onClick={callback}>
+    <BWrapper onClick={onClick}>
       <Link href={url} as={asParam}>
-        <StyledButton>{title}</StyledButton>
+        <Button>{title}</Button>
       </Link>
     </BWrapper>
   );

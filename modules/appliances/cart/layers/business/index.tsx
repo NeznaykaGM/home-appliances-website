@@ -6,14 +6,14 @@ import { CartContext } from '@md-modules/shared/providers/cart-context';
 
 interface Context {
   products: Product[];
-  deleteProductFromCart: (id: string | number) => void;
+  deleteProductFromCart: (id: number) => void;
   totalAmountItemCart: number;
   countItemCart: number;
 }
 
 const CartBLContext = React.createContext<Context>({
   products: [],
-  deleteProductFromCart: (_id) => {},
+  deleteProductFromCart: () => {},
   totalAmountItemCart: 0,
   countItemCart: 0
 });

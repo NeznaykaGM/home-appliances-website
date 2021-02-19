@@ -19,7 +19,7 @@ const ProductAPIContextProvider: React.FC = ({ children }) => {
   // make api call here
   const router = useRouter();
   const { id } = router.query;
-  const { data, loading } = useQuery(products.find((e) => e.id == id));
+  const { data, loading } = useQuery(products.find((e) => e.id.toString() == id));
 
   return (
     <ProductAPIContext.Provider

@@ -4,7 +4,7 @@ interface Props {
   type: string | undefined;
 }
 
-export const StyledButton = styled.div`
+export const WButton = styled.div`
   max-height: 100px;
   max-width: 100px;
   padding: 8px;
@@ -13,10 +13,6 @@ export const StyledButton = styled.div`
   text-align: center;
   border: 1px solid ${({ type }: Props) => (type === 'delete' ? '#ff453a' : '#34c759')};
   transition: all ease 0.2s;
-  a {
-    text-decoration: none;
-    color: black !important;
-  }
   &:hover {
     background: ${({ type }: Props) => (type === 'delete' ? '#ff453a' : '#34c759')};
     border: 1px solid ${({ type }: Props) => (type === 'delete' ? '#ff453a' : '#34c759')};
