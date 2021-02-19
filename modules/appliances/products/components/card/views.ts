@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   position: relative;
   border-radius: 10px;
   transition: box-shadow 0.1s linear;
+  
   img {
     width: 100%;
     height: 200px;
@@ -30,19 +31,18 @@ export const Wrapper = styled.div`
 export const DWrapper = styled.div`
   width: 100%;
   display: flex;
-  div {
-    padding: 0 50px 0 0;
-  }
 `;
 
+export const DWrapperName = styled.div`
+  padding: 0 10px 0 0;
+`
+
 export const ButtonWrapper = styled.div`
-  div {
-    margin-right: 2px;
-    margin-bottom: 2px;
-  }
-  float: right;
+  width: 60%;
   display: flex;
+  justify-content: space-around;
+  float: right;
   position: absolute;
   bottom: 0;
-  margin: 0 0 4px;
+  padding-bottom: 8px;
 `;

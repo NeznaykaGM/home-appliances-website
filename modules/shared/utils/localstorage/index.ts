@@ -4,7 +4,8 @@ import { useEffect } from 'react';
 interface AnyProduct {
   id: number
 }
-export const useLocalStorage = <S extends AnyProduct>(cartProducts: S[], setCartProducts: (param: any) => void) => {
+
+export const useLocalStorage = <S extends AnyProduct>(cartProducts: S[], setCartProducts: any) => {
 
   useEffect(() => {
     try{
@@ -31,9 +32,9 @@ export const useLocalStorage = <S extends AnyProduct>(cartProducts: S[], setCart
       }
     }
 
-  if(typeof window !== 'undefined') {
+  useEffect(() => {
     localStorage.setItem('CartState', JSON.stringify(cartProducts));
-  }
+  },[cartProducts])
 
   return{
     deleteProductFromCart,

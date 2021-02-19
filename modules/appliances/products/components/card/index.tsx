@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react';
 import Link from 'next/link';
 import LButton from '@md-ui/button/linked-button';
 import Button from '@md-ui/button/main';
-import { Wrapper, DWrapper, ButtonWrapper } from './views';
+import { Wrapper, DWrapper, ButtonWrapper, DWrapperName } from './views';
 import { ProductsBLContext } from '../../layers/businnes/index';
 
 interface Props {
@@ -20,7 +20,7 @@ const ProductsCard: FC<Props> = ({ img, name, price, id }) => {
         <img src={img} alt='img' />
       </Link>
       <DWrapper>
-        <div>Name: {name}</div>
+        <DWrapperName>Name: {name}</DWrapperName>
         <div>Price: {price}</div>
       </DWrapper>
       <ButtonWrapper>

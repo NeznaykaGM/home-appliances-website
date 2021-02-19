@@ -1,5 +1,5 @@
 import React from 'react';
-import { BWrapper, StyledButton } from './views';
+import { BWrapper, WButton } from './views';
 
 interface props {
   title: string;
@@ -10,7 +10,7 @@ interface props {
 const Button: React.FC<props> = ({ title, type, onClick }) => {
   return (
     <BWrapper onClick={onClick}>
-      <StyledButton type={type}>{title}</StyledButton>
+      <WButton type={type}>{title}</WButton>
     </BWrapper>
   );
 };

@@ -7,15 +7,15 @@ export const WHeader = styled.div`
   color: white;
   display: flex;
   padding: 10px;
+`;
 
-  p {
+
+export const WCart = styled.p`
     align-self: flex-end;
     justify-content: flex-end;
     margin-left: auto;
     cursor: pointer;
-  }
-`;
-
+`
 export const LWrapper = styled.div`
   img {
     display: block;

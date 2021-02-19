@@ -11,10 +11,6 @@ export const DescriptionsWrapper = styled.div`
   width: 100%;
   padding-left: 20px;
   font-size: 20px;
-
-  div {
-    padding: 0 50px 0 0;
-  }
 `;
 
 export const Image = styled.img`
@@ -41,26 +37,9 @@ export const ButtonWrapper = styled.div`
 export const ImageDescriptionsWrapper = styled.div`
   display: flex;
   padding: 10px;
-  p {
-    padding: 10px 0 0 0;
-    font-size: 16px;
-  }
 `;
 
 export const ImageWrapper = styled.div`
   width: 300px;
   height: 100%;
-`;
-
-export const TitleWrapper = styled.div`
-  padding: 10px;
-  text-align: center;
-`;
-export const Title = styled.h2`
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  padding: 10px;
-  color: black;
-  display: inline-block;
-  border-radius: 50px;
-  background-color: #fafafa;
 `;

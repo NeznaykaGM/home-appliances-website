@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { Logo } from '@md-ui/logos/main';
-import { LWrapper, WHeader} from './views';
+//context
 import { CartContext } from '@md-modules/shared/providers/cart-context';
+//views
+import { LWrapper, WHeader, WCart} from './views';
 
 const Header = () => {
   const { countItemCart, setActive } = useContext(CartContext);
@@ -10,7 +12,7 @@ const Header = () => {
       <LWrapper>
         <Logo />
       </LWrapper>
-      <p onClick={() => setActive(true)}>Cart: {countItemCart}</p>
+      <WCart onClick={() => setActive(true)}>Cart: {countItemCart}</WCart>
     </WHeader>
   );
 };

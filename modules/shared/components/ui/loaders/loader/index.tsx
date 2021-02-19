@@ -2,7 +2,7 @@ import React from 'react';
 import { Wrapper } from './views';
 
 const Loader = () => {
-  return <Wrapper></Wrapper>;
+  return <Wrapper/>;
 };
 
 export { Loader };
