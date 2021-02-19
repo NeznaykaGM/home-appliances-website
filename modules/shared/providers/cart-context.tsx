@@ -1,5 +1,6 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { CartProducts, Product } from '@md-modules/shared/mock';
+import { useLocalStorage } from '@md-utils/localstorage';
 //context
 interface Context {
   cartProducts: Product[];
@@ -7,7 +8,7 @@ interface Context {
   active: boolean;
   setActive: (isActive: boolean) => void;
   countItemCart: number;
-  deleteProductFromCart: (productId: string | number) => void;
+  deleteProductFromCart: (productId: number) => void;
   totalAmountItemCart: number;
 }
 
@@ -23,7 +24,7 @@ export const CartContext = React.createContext<Context>({
 
 const CartContextProvider: React.FC = ({ children }) => {
   const [active, setActive] = useState(false);
-  const [cartProducts, setCartProducts] = useState(CartProducts);
+  const [cartProducts, setCartProducts] = useState<Product[]>(CartProducts);
 
   if (typeof window !== 'undefined') {
     if (!localStorage.getItem('CartState')) {
@@ -31,37 +32,7 @@ const CartContextProvider: React.FC = ({ children }) => {
     }
   }
 
-  useEffect(() => {
-    try{
-      setCartProducts(JSON.parse(localStorage.getItem('CartState') as string));
-    }catch (e) {
-      setCartProducts([]);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('CartState', JSON.stringify(cartProducts));
-  }, [cartProducts]);
-
-  const deleteProductFromCart = useCallback(
-    (productId: string | number) => {
-      const filteredCart = cartProducts.filter(({ id }) => id !== productId);
-      setCartProducts(filteredCart);
-    },
-    [cartProducts]
-  );
-
-  const addProductToCart = useCallback(
-    (product: Product) => {
-      const isProductInCart = cartProducts.some((e) => product.id == e.id);
-      if (!isProductInCart) {
-        setCartProducts((prev) => {
-          return [...prev, product];
-        });
-      }
-    },
-    [cartProducts]
-  );
+  const {deleteProductFromCart, addProductToCart} = useLocalStorage<Product>(cartProducts, setCartProducts)
 
   useEffect(() => {
     if (cartProducts.length === 0) {
@@ -69,8 +40,7 @@ const CartContextProvider: React.FC = ({ children }) => {
     }
   }, [cartProducts]);
 
-  const countItemCart = useMemo(() => cartProducts.length, [cartProducts]);
-
+  const countItemCart = cartProducts.length;
   const totalAmountItemCart = useMemo(
     () => cartProducts.reduce((accumulator, currentValue) => accumulator + currentValue.price, 0),
     [cartProducts]

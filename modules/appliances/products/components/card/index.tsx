@@ -8,8 +8,8 @@ import { ProductsBLContext } from '../../layers/businnes/index';
 interface Props {
   img: string;
   name: string;
-  price: string | number;
-  id: string | number;
+  price: number;
+  id: number;
 }
 
 const ProductsCard: FC<Props> = ({ img, name, price, id }) => {

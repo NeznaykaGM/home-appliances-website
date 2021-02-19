@@ -12,8 +12,8 @@ import {
 interface Props {
   img: string;
   name: string;
-  price: string | number;
-  id: string | number;
+  price: number;
+  id: number;
   descriptions?: string;
   onClick: () => void;
 }
