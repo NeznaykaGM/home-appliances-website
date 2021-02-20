@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 95vh;
-  height: 40vh;
+  height: 320px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   padding: 10px;
   margin: 10px;
@@ -24,14 +24,9 @@ export const Wrapper = styled.div`
 
 export const DWrapper = styled.div`
   width: 100%;
-  display: flex;
-  div {
-    padding: 0 50px 0 0;
-  }
 `;
 
 export const ButtonWrapper = styled.div`
-  float: right;
   display: flex;
   position: absolute;
   bottom: 0;

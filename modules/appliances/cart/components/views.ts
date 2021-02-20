@@ -27,7 +27,7 @@ export const MCWrapper = styled.div`
   padding: 10px;
   width: 50vw;
   height: 600px;
-  transition: all 0.4s;
+  transition: all 0.5s;
   border-radius: 10px;
   position: fixed;
 `;
@@ -45,9 +45,10 @@ export const MWrapper = styled.div`
   justify-content: center;
   opacity: ${({ opacity }: Props) => opacity || 0};
   pointer-events: ${({ pointerEvents }) => pointerEvents || 'none'};
-  transition: 0.5ms;
+  transition: all 0.3s ease;
 `;
 export const AmountWrapper = styled.div`
+  border-radius: 0 0 24px 24px;
   text-align: center;
   font-size: 16px;
   color: #43484d;

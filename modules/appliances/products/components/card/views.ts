@@ -5,8 +5,9 @@ export const Wrapper = styled.div`
     box-shadow: 0 0 8px rgba(0.2, 0.2, 0.2, 0.5);
     transition: box-shadow 0.2s linear;
   }
+  
   width: 300px;
-  height: 300px;
+  height: 350px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   padding: 10px;
   margin: 10px;
@@ -30,7 +31,7 @@ export const Wrapper = styled.div`
 
 export const DWrapper = styled.div`
   width: 100%;
-  display: flex;
+  font-weight: 500;
 `;
 
 export const DWrapperName = styled.div`
@@ -38,11 +39,7 @@ export const DWrapperName = styled.div`
 `
 
 export const ButtonWrapper = styled.div`
-  width: 60%;
-  display: flex;
   justify-content: space-around;
-  float: right;
-  position: absolute;
-  bottom: 0;
-  padding-bottom: 8px;
+  display: flex;
+  padding-top: 54px;
 `;

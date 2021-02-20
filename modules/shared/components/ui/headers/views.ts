@@ -11,10 +11,9 @@ export const WHeader = styled.div`
 
 
 export const WCart = styled.p`
-    align-self: flex-end;
-    justify-content: flex-end;
     margin-left: auto;
     cursor: pointer;
+    align-self: center;
 `
 export const LWrapper = styled.div`
   img {

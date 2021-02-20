@@ -10,9 +10,10 @@ interface Props {
 /*TODO*/
 const Cart: React.FC<Props> = ({ totalAmountItemCart, active, setActive, children }) => {
   return (
-    <MWrapper onClick={() => setActive(false)} opacity={active ? '1' : '0'} pointerEvents={active ? 'all' : 'none'}>
+    <MWrapper  onClick={() => setActive(false)} opacity={active ? '1' : '0'} pointerEvents={active ? 'all' : 'none'}>
       <MCWrapper onClick={(event) => event.stopPropagation()}>
         <ChildrenWrapper>{children}</ChildrenWrapper>
+
         <AmountWrapper>
           <p>Total amount: {totalAmountItemCart}</p>
         </AmountWrapper>
