@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 
 interface AnyProduct {
@@ -8,6 +7,9 @@ interface AnyProduct {
 export const useLocalStorage = <S extends AnyProduct>(cartProducts: S[], setCartProducts: any) => {
 
   useEffect(() => {
+    if (!localStorage.getItem('CartState')) {
+      localStorage.setItem('CartState', JSON.stringify([]));
+    }
     try{
       setCartProducts(JSON.parse(localStorage.getItem('CartState') as string));
     }catch (err) {

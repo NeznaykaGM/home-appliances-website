@@ -1,8 +1,9 @@
-import { CartProducts, Product } from '@md-modules/shared/mock';
+import { Product } from '@md-modules/shared/mock';
 //hooks
 import React, { useEffect, useMemo, useState } from 'react';
 import { useLocalStorage } from '@md-utils/localstorage';
-//context
+
+//context type
 interface Context {
   cartProducts: Product[];
   addProductToCart: (product: Product) => void;
@@ -25,13 +26,7 @@ export const CartContext = React.createContext<Context>({
 
 const CartContextProvider: React.FC = ({ children }) => {
   const [active, setActive] = useState(false);
-  const [cartProducts, setCartProducts] = useState<Product[]>(CartProducts);
-
-  if (typeof window !== 'undefined') {
-    if (!localStorage.getItem('CartState')) {
-      localStorage.setItem('CartState', JSON.stringify(CartProducts));
-    }
-  }
+  const [cartProducts, setCartProducts] = useState<Product[]>([]);
 
   const {deleteProductFromCart, addProductToCart} = useLocalStorage<Product>(cartProducts, setCartProducts)
 
