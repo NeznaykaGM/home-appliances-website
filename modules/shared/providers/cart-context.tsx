@@ -29,17 +29,12 @@ const CartContextProvider: React.FC = ({ children }) => {
   //local state
   const [cartProducts, setCartProducts] = useState<Product[]>([]);
   //local storage hook: {addProduct,removeProducts} methods
-  const { addProduct, removeProduct } = useLocalStorage<Product>();
+  const { addProduct, removeProduct, getProducts } = useLocalStorage<Product>();
 
   //update local state
-  const setInCart = useCallback(() => {
-    try {
-      setCartProducts(JSON.parse(localStorage.getItem('CartState') as string) || []);
-    } catch (err) {
-      console.error(err);
-      setCartProducts([]);
-    }
-  }, []);
+  const setInCart = () => {
+    setCartProducts(getProducts())
+  }
 
   //Effect(s)
   useEffect(() => {
