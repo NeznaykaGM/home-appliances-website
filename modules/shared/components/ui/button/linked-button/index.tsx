@@ -5,7 +5,7 @@ import { Button, BWrapper } from './views';
 interface Props {
   title: string;
   url: string;
-  onClick?: any;
+  onClick?: () => void;
   asParam?: string;
 }
 
