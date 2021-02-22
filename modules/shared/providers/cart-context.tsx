@@ -57,7 +57,7 @@ const CartContextProvider: React.FC = ({ children }) => {
   const addProductToCart = (product: Product) => {
     const isProductInCart = cartProducts.some((e) => e.id == product.id);
     if (!isProductInCart) {
-      addProduct(cartProducts, product);
+      addProduct(product);
       setInCart();
     }
   };

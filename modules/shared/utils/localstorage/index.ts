@@ -1,5 +1,5 @@
 export const useLocalStorage = <S>() => {
-  const getProducts = () => {
+  const getStoreItem = () => {
     try {
      return JSON.parse(localStorage.getItem('CartState') as string) || [];
     } catch (err) {
@@ -7,8 +7,8 @@ export const useLocalStorage = <S>() => {
     }
   };
 
-  const addProduct = (cartProducts: S[],products: S) => {
-    localStorage.setItem('CartState', JSON.stringify([...cartProducts,products]));
+  const addProduct = (products: S) => {
+    localStorage.setItem('CartState', JSON.stringify([...getStoreItem(),products]));
   };
 
   const removeProduct = (filteredCart: S[]) => {
@@ -18,6 +18,6 @@ export const useLocalStorage = <S>() => {
   return {
     addProduct,
     removeProduct,
-    getProducts
+    getProducts: () => getStoreItem,
   };
 };
