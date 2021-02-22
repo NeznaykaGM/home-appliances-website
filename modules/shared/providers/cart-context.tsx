@@ -1,13 +1,13 @@
-import { CartProducts, Product } from '@md-modules/shared/mock';
+import { Product } from '@md-modules/shared/mock';
 //hooks
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLocalStorage } from '@md-utils/localstorage';
 //context
 interface Context {
   cartProducts: Product[];
   addProductToCart: (product: Product) => void;
-  active: boolean;
-  setActive: (isActive: boolean) => void;
+  activeCart: boolean;
+  setActiveCart: (isActive: boolean) => void;
   countItemCart: number;
   deleteProductFromCart: (productId: number) => void;
   totalAmountItemCart: number;
@@ -16,28 +16,50 @@ interface Context {
 export const CartContext = React.createContext<Context>({
   addProductToCart: () => {},
   cartProducts: [],
-  active: false,
-  setActive: () => {},
+  activeCart: false,
+  setActiveCart: () => {},
   countItemCart: 0,
   deleteProductFromCart: () => {},
   totalAmountItemCart: 0
 });
 
 const CartContextProvider: React.FC = ({ children }) => {
-  const [active, setActive] = useState(false);
-  const [cartProducts, setCartProducts] = useState<Product[]>(CartProducts);
+  //hooks cart state
+  const [activeCart, setActiveCart] = useState(false);
+  const [cartProducts, setCartProducts] = useState<Product[]>([]);
 
-  if (typeof window !== 'undefined') {
-    if (!localStorage.getItem('CartState')) {
-      localStorage.setItem('CartState', JSON.stringify(CartProducts));
+  const { addProduct, removeProduct } = useLocalStorage<Product>();
+
+  const setInCart = useCallback(() => {
+    try {
+      setCartProducts(JSON.parse(localStorage.getItem('CartState') as string) || []);
+    } catch (err) {
+      console.error(err);
+      setCartProducts([]);
     }
-  }
+  }, []);
 
-  const {deleteProductFromCart, addProductToCart} = useLocalStorage<Product>(cartProducts, setCartProducts)
+  useEffect(() => {
+    setInCart();
+  }, []);
+
+  const deleteProductFromCart = (productId: number) => {
+    const filteredCart = cartProducts.filter(({ id }) => id !== productId);
+    removeProduct(filteredCart);
+    setInCart();
+  };
+
+  const addProductToCart = (product: Product) => {
+    const isProductInCart = cartProducts.some((e) => e.id == product.id);
+    if (!isProductInCart) {
+      addProduct( cartProducts, product);
+      setInCart();
+    }
+  };
 
   useEffect(() => {
     if (cartProducts.length === 0) {
-      setActive(false);
+      setActiveCart(false);
     }
   }, [cartProducts]);
 
@@ -52,8 +74,8 @@ const CartContextProvider: React.FC = ({ children }) => {
       value={{
         cartProducts,
         addProductToCart,
-        active,
-        setActive,
+        activeCart: activeCart,
+        setActiveCart: setActiveCart,
         countItemCart,
         deleteProductFromCart,
         totalAmountItemCart

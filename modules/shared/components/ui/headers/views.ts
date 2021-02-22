@@ -9,13 +9,12 @@ export const WHeader = styled.div`
   padding: 10px;
 `;
 
-
 export const WCart = styled.p`
-    align-self: flex-end;
-    justify-content: flex-end;
-    margin-left: auto;
-    cursor: pointer;
-`
+  align-self: flex-end;
+  justify-content: flex-end;
+  margin-left: auto;
+  cursor: pointer;
+`;
 export const LWrapper = styled.div`
   img {
     display: block;

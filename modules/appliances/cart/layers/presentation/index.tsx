@@ -3,17 +3,16 @@ import Cart from '@md-modules/appliances/cart/components';
 import CardForCart from '@md-modules/appliances/cart/components/card';
 //context
 import { CartContext } from '@md-modules/shared/providers/cart-context';
-import { CartBLContext } from '../business/index';
+
 
 const CartPresentation = () => {
-  const { active, setActive } = useContext(CartContext);
-  const { products, deleteProductFromCart, countItemCart, totalAmountItemCart } = useContext(CartBLContext);
+  const { activeCart, setActiveCart, cartProducts, deleteProductFromCart, countItemCart, totalAmountItemCart } = useContext(CartContext);
 
   return (
     <>
-      <Cart active={active} setActive={setActive} totalAmountItemCart={totalAmountItemCart}>
+      <Cart activeCart={activeCart} setActiveCart={setActiveCart} totalAmountItemCart={totalAmountItemCart}>
         <h2>Cart: {countItemCart}</h2>
-        {products.map((element) => (
+        {cartProducts.map((element) => (
           <CardForCart
             deleteProductFromCart={deleteProductFromCart}
             id={element.id}

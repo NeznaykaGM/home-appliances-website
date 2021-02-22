@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   position: relative;
   border-radius: 10px;
   transition: box-shadow 0.1s linear;
-  
+
   img {
     width: 100%;
     height: 200px;
@@ -35,7 +35,7 @@ export const DWrapper = styled.div`
 
 export const DWrapperName = styled.div`
   padding: 0 10px 0 0;
-`
+`;
 
 export const ButtonWrapper = styled.div`
   width: 60%;
