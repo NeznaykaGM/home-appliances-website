@@ -26,10 +26,12 @@ export const CartContext = React.createContext<Context>({
 const CartContextProvider: React.FC = ({ children }) => {
   //hooks cart state
   const [activeCart, setActiveCart] = useState(false);
+  //local state
   const [cartProducts, setCartProducts] = useState<Product[]>([]);
-
+  //local storage hook: {addProduct,removeProducts} methods
   const { addProduct, removeProduct } = useLocalStorage<Product>();
 
+  //update local state
   const setInCart = useCallback(() => {
     try {
       setCartProducts(JSON.parse(localStorage.getItem('CartState') as string) || []);
@@ -39,10 +41,18 @@ const CartContextProvider: React.FC = ({ children }) => {
     }
   }, []);
 
+  //Effect(s)
   useEffect(() => {
     setInCart();
   }, []);
 
+  useEffect(() => {
+    if (cartProducts.length === 0) {
+      setActiveCart(false);
+    }
+  }, [cartProducts]);
+
+  //Logic
   const deleteProductFromCart = (productId: number) => {
     const filteredCart = cartProducts.filter(({ id }) => id !== productId);
     removeProduct(filteredCart);
@@ -52,16 +62,10 @@ const CartContextProvider: React.FC = ({ children }) => {
   const addProductToCart = (product: Product) => {
     const isProductInCart = cartProducts.some((e) => e.id == product.id);
     if (!isProductInCart) {
-      addProduct( cartProducts, product);
+      addProduct(cartProducts, product);
       setInCart();
     }
   };
-
-  useEffect(() => {
-    if (cartProducts.length === 0) {
-      setActiveCart(false);
-    }
-  }, [cartProducts]);
 
   const countItemCart = cartProducts.length;
   const totalAmountItemCart = useMemo(
